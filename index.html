@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para ti mi pelionera 💕</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at center, #0b0014, #000);
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      color: #ffcce6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+      cursor: pointer;
+    }
+
+    .poema {
+      max-width: 700px;
+      padding: 30px;
+      font-size: 1.4rem;
+      line-height: 1.8;
+      z-index: 2;
+      text-shadow: 0 0 5px #000;
+    }
+
+    .poema p {
+      margin-bottom: 25px;
+    }
+
+    
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      transform: rotate(-45deg);
+      animation: floatUp 2.5s ease-out forwards;
+      z-index: 10;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: inherit;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 10px;
+    }
+
+    @keyframes floatUp {
+      0% {
+        opacity: 1;
+        transform: rotate(-45deg) translateY(0) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: rotate(-45deg) translateY(-150px) scale(1.5);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="poema">
+    <p>
+      Desde lo más profundo de mi corazón, quiero decirte lo especial que eres para mí.
+    </p>
+    <p>
+      Tu luz, tu belleza y tu forma de ser iluminan mi vida como nada más en este mundo.  
+      A veces me quedo sin palabras para expresar cuánto te admiro, cuánto me inspiras y cuánto me importas.
+    </p>
+    <p>
+      Si en algún momento te he incomodado, molestado o herido de alguna manera, quiero pedirte mis más sinceras disculpas.  
+      Nunca ha sido mi intención, mi reina. Lo único que deseo es verte sonreír, sentirte feliz y acompañarte siempre en tu camino.
+    </p>
+    <p>
+      Gracias por existir, por ser tan especial, tan única, tan hermosa, tan curiosa, tan divina, todo de ti mi pelionera.  
+      Gracias por dejarme conocerte, por regalarme momentos que valoro profundamente cuando le dijiste al sushi cuchi o cuando dijiste aí en vez de ay.
+    </p>
+    <p>
+      Ojalá estas palabras, y cada uno de estos pequeños corazones que aparecen, te recuerden cuánto te quiero.  
+      Porque si supieras cuánto brillo le das a mi vida, entenderías por qué siempre te llamo mi niña hermosa, mi muñequita y mi morenita preciosa.  
+      A tu lado cada día es un regalo, y cada instante contigo es un recuerdo que guardo en lo más profundo de mi alma.
+    </p>
+    <p>
+       Con todo el cariño de parte de tu chino mk, te quiero mucho mi pelionera :)
+      </p>
+      <p> Dato curioso: Si haces click en cualquier parte de la pantalla, aparecerán corazones que flotarán hacia arriba. 
+
+  </div>
+
+  <script>
+    const colors = ['#ff4d6d', '#ffb3c6', '#ffc0cb', '#ff6699', '#ff80bf'];
+
+    document.addEventListener('click', (e) => {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+
+      heart.style.left = `${e.clientX - 10}px`;
+      heart.style.top = `${e.clientY - 10}px`;
+
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      heart.style.backgroundColor = color;
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 2500);
+    });
+  </script>
+
+</body>
+</html>
